@@ -125,14 +125,41 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(words) {
+  if(words.length === 0){
+    return null;
+  }
+  const result = []; // creates an empty array where we will push ONLY the unique values
+  for (let i = 0; i < words.length; i++) {
+    // loops through the array for as long as it has elements
+    if (result.indexOf(words[i]) === -1) {
+      // when the result is -1 it means what we tested isn’t there. In this case we tested (arr1) which will be for example, crab
+      result.push(words[i]); // This will push the value of arr[i] if it doesn’t exist there. If it is not -1 it means it already exist, so it will skip that word and move on to the next.
+    }
+  }
+  return result;
+}
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(array, word) {
+  let check = false
+  if(array.length === 0 ){
+    return null
+  }
+ for(let i = 0; i < array.length; i++){
+   if(array[i] === word){
+     check = true
+     break
+   } else {
+     continue
+   }
+ }
+ return check
+}
 
 
 
@@ -151,7 +178,18 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(array,word) {
+  if(array.length === 0 ){
+    return 0;
+  }
+  let count =0;
+  for(let i= 0; i< array.length; i++){
+    if(array[i] === word){
+      count ++
+    }
+  }
+  return count
+}
 
 
 
